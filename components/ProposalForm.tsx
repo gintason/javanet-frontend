@@ -25,7 +25,7 @@ const ProposalForm: React.FC = () => {
   });
 
   const { execute: generateProposal, loading, data: proposalData, error } = useApi<ProposalResponse>(
-    '/proposals/generate/',
+    'api/proposals/generate/',
     'POST'
   );
 
