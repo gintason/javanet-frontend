@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuthContext } from '@/contexts/AuthContext';
+export const dynamic = 'force-dynamic';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');

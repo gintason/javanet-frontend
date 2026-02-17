@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useApi } from '@/hooks/useApi';
 import { useChatbotContext } from '@/contexts/ChatbotContext';
 import Link from 'next/link';
+export const dynamic = 'force-dynamic';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
