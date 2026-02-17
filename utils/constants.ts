@@ -24,8 +24,8 @@ export const API_ENDPOINTS = {
   LIVE_FEATURES: '/features/live_features/',
   
   // Testimonials - KEPT AS IS
-  TESTIMONIALS: '/testimonials/',
-  RECENT_TESTIMONIALS: '/testimonials/recent/',
+  TESTIMONIALS: 'api/testimonials/',
+  RECENT_TESTIMONIALS: 'api/testimonials/recent/',
   
   // AI Chatbot - UPDATED with /api/ prefix to match your Django URLs
   CHAT_SEND: '/api/chatbot/chat/',           // Changed from /chatbot/chat/
