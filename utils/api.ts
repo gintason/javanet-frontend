@@ -2,8 +2,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // Use environment variable in production, fallback to localhost for development
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://www.javanetict.com',
+  // Use environment variable in production, fallback to custom domain for production
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://api.javanetict.com',
   headers: { 
     'Content-Type': 'application/json',
   },
@@ -66,7 +66,7 @@ api.interceptors.response.use(
       return Promise.reject({
         ...error,
         isNetworkError: true,
-        message: 'Unable to connect to the server. Please ensure the backend is running at https://www.javanetict.com'
+        message: 'Unable to connect to the server. Please ensure the backend is running.'
       });
     }
 
@@ -82,7 +82,7 @@ api.interceptors.response.use(
         const refreshToken = localStorage.getItem('refresh_token');
         if (refreshToken) {
           const response = await axios.post(
-            `${api.defaults.baseURL}/auth/token/refresh/`,
+            `${api.defaults.baseURL}/api/auth/token/refresh/`,
             { refresh: refreshToken },
             { 
               headers: { 'Content-Type': 'application/json' },
@@ -236,7 +236,7 @@ export const userApi = {
   }
 };
 
-// Auth API methods - CORRECTED with uid/token for reset endpoints
+// Auth API methods
 export const authApi = {
   login: async (email: string, password: string) => {
     const response = await api.post('/api/auth/login/', { email, password });
@@ -288,7 +288,7 @@ export const authApi = {
     }
   },
   
-  // 🔴 FIXED: Verify reset token - uses uid AND token
+  // Verify reset token - uses uid AND token
   verifyResetToken: async (uid: string, token: string) => {
     try {
       const response = await api.post('/auth/password/reset/verify/', { uid, token });
@@ -309,7 +309,7 @@ export const authApi = {
     }
   },
   
-  // 🔴 FIXED: Reset password - uses uid, token, and new_password
+  // Reset password - uses uid, token, and new_password
   resetPassword: async (uid: string, token: string, newPassword: string) => {
     try {
       const response = await api.post('/auth/password/reset/confirm/', {
