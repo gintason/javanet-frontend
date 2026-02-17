@@ -1,11 +1,9 @@
-"use client";
-
+// app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
@@ -17,8 +15,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'JavaNet EdTech Suite - White-Label Learning Platform',
-  description:
-    'Customizable Computer-Based Testing (CBT) and Live Classroom Solutions for Educational Institutions. One-time deployment fee, no monthly subscriptions.',
+  description: 'Customizable Computer-Based Testing (CBT) and Live Classroom Solutions for Educational Institutions. One-time deployment fee, no monthly subscriptions.',
   keywords: 'edtech, cbt testing, virtual classroom, e-learning, school management, online examination',
 };
 
@@ -33,7 +30,9 @@ export default function RootLayout({
         <AuthProvider>
           <ChatbotProvider>
             <Navbar />
-            <main className="min-h-screen pt-16">{children}</main>
+            <main className="min-h-screen pt-16">
+              {children}
+            </main>
             <Footer />
             <Chatbot />
             <BootstrapClient />
