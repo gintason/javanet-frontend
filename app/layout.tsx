@@ -1,23 +1,24 @@
-// app/layout.tsx
+"use client";
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { ChatbotProvider } from '@/contexts/ChatbotContext';
-import BootstrapClient from '@/components/BootstrapClient'; // Add this
-// In your layout.tsx or head.tsx, add:
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></link>
+import BootstrapClient from '@/components/BootstrapClient';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'JavaNet EdTech Suite - White-Label Learning Platform',
-  description: 'Customizable Computer-Based Testing (CBT) and Live Classroom Solutions for Educational Institutions. One-time deployment fee, no monthly subscriptions.',
+  description:
+    'Customizable Computer-Based Testing (CBT) and Live Classroom Solutions for Educational Institutions. One-time deployment fee, no monthly subscriptions.',
   keywords: 'edtech, cbt testing, virtual classroom, e-learning, school management, online examination',
 };
 
@@ -32,12 +33,10 @@ export default function RootLayout({
         <AuthProvider>
           <ChatbotProvider>
             <Navbar />
-            <main className="min-h-screen pt-16">
-              {children}
-            </main>
+            <main className="min-h-screen pt-16">{children}</main>
             <Footer />
             <Chatbot />
-            <BootstrapClient /> {/* Add this component */}
+            <BootstrapClient />
           </ChatbotProvider>
         </AuthProvider>
       </body>
