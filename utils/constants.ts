@@ -3,8 +3,8 @@
 // API endpoints based on your Django backend
 export const API_ENDPOINTS = {
   // Authentication - FIXED to match Django users app URLs (under /api/auth/)
-  REGISTER: '/auth/register/',      // Changed from /api/users/register/
-  LOGIN: '/auth/login/',            // Changed from /api/users/login/
+  REGISTER: 'api/auth/register/',      // Changed from /api/users/register/
+  LOGIN: 'api/auth/login/',            // Changed from /api/users/login/
   LOGOUT: '/auth/logout/',          // Changed from /api/users/logout/
   REFRESH_TOKEN: '/auth/token/refresh/', // Changed from /api/users/token/refresh/
   PROFILE: '/auth/profile/',        // Changed from /api/users/profile/
