@@ -48,11 +48,11 @@ export const API_ENDPOINTS = {
 // For debugging - absolute URLs (UPDATED to use port 8080)
 export const ABSOLUTE_API_ENDPOINTS = {
   // Using absolute URLs for debugging
-  CHAT_SEND_FULL: 'https://www.javanetict.com/api/chatbot/chat/',
+  CHAT_SEND_FULL: 'https://api.javanetict.com/api/chatbot/chat/',
   // ADDED - more absolute URLs for debugging
-  LOGIN_FULL: 'https://www.javanetict.com/api/auth/login/',
-  CHECK_AUTH_FULL: 'https://www.javanetict.com/api/auth/check-auth/',
-  REGISTER_FULL: 'https://www.javanetict.com/api/auth/register/',
+  LOGIN_FULL: 'https://api.javanetict.com/api/auth/login/',
+  CHECK_AUTH_FULL: 'https://api.javanetict.com/api/auth/check-auth/',
+  REGISTER_FULL: 'https://api.javanetict.com/api/auth/register/',
 };
 
 // ----------------------------------------------------------------------------
