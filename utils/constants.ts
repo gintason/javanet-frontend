@@ -5,14 +5,14 @@ export const API_ENDPOINTS = {
   // Authentication - FIXED to match Django users app URLs (under /api/auth/)
   REGISTER: 'api/auth/register/',      // Changed from /api/users/register/
   LOGIN: 'api/auth/login/',            // Changed from /api/users/login/
-  LOGOUT: '/auth/logout/',          // Changed from /api/users/logout/
-  REFRESH_TOKEN: '/auth/token/refresh/', // Changed from /api/users/token/refresh/
-  PROFILE: '/auth/profile/',        // Changed from /api/users/profile/
-  CHECK_AUTH: '/auth/check-auth/',  // Changed from /api/users/check-auth/
+  LOGOUT: 'api/auth/logout/',          // Changed from /api/users/logout/
+  REFRESH_TOKEN: 'api/auth/token/refresh/', // Changed from /api/users/token/refresh/
+  PROFILE: 'api/auth/profile/',        // Changed from /api/users/profile/
+  CHECK_AUTH: 'api/auth/check-auth/',  // Changed from /api/users/check-auth/
   
   // Additional user endpoints - FIXED to match Django users app URLs
-  PASSWORD_CHANGE: '/auth/password/change/', // Changed from /api/users/password/change/
-  ACTIVITIES: '/auth/activities/',  // Changed from /api/users/activities/
+  PASSWORD_CHANGE: 'api/auth/password/change/', // Changed from /api/users/password/change/
+  ACTIVITIES: 'api/auth/activities/',  // Changed from /api/users/activities/
   
   // JWT token endpoints (alternative endpoints from main urls.py)
   JWT_TOKEN: '/api/token/',             // ADDED - Simple JWT default endpoint
