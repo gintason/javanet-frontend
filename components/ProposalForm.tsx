@@ -71,13 +71,13 @@ const ProposalForm: React.FC = () => {
     }
 
     console.log('📤 Sending PDF request to Django:', {
-      url: 'https://www.javanetict.com/api/proposals/generate-pdf/',
+      url: 'https://api.javanetict.com/api/proposals/generate-pdf/',
       data: requestData
     });
 
     // Use absolute URL to avoid Next.js routing issues
     // CRITICAL: NO 'Accept' header!
-    const response = await fetch('https://www.javanetict.com/api/proposals/generate-pdf/', {
+    const response = await fetch('https://api.javanetict.com/api/proposals/generate-pdf/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
