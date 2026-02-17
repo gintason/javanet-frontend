@@ -19,9 +19,9 @@ export const API_ENDPOINTS = {
   JWT_TOKEN_REFRESH: '/api/token/refresh/', // ADDED - Simple JWT refresh endpoint
   
   // Features - KEPT AS IS
-  FEATURES: '/features/',
-  CTB_FEATURES: '/features/ctb_features/',
-  LIVE_FEATURES: '/features/live_features/',
+  FEATURES: 'api/features/',
+  CTB_FEATURES: 'api/features/ctb_features/',
+  LIVE_FEATURES: 'api/features/live_features/',
   
   // Testimonials - KEPT AS IS
   TESTIMONIALS: 'api/testimonials/',
@@ -36,13 +36,13 @@ export const API_ENDPOINTS = {
   PROPOSAL_GENERATE: '/api/proposals/generate/', // Changed from /proposals/generate/
   
   // Demo Simulator - KEPT AS IS (adjust if needed)
-  DEMO_PLATFORM: '/demo/platform/',
+  DEMO_PLATFORM: 'api/demo/platform/',
   
   // Currency Detection - KEPT AS IS (adjust if needed)
-  CURRENCY_DETECT: '/currency/detect/',
+  CURRENCY_DETECT: 'api/currency/detect/',
   
   // Health Check - KEPT AS IS (adjust if needed)
-  HEALTH_CHECK: '/health/',
+  HEALTH_CHECK: 'api/health/',
 };
 
 // For debugging - absolute URLs (UPDATED to use port 8080)
