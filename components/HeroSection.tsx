@@ -162,7 +162,7 @@ const HeroSection: React.FC = () => {
               className="btn btn-warning px-2 px-md-3 py-1 py-md-2 fw-bold hover-lift text-nowrap"
             >
               <i className="bi bi-file-text me-1 me-md-2"></i>
-              Get a Proposal
+              Generate Proposal
             </Link>
             
             <Link 
