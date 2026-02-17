@@ -279,7 +279,7 @@ const ContactPage = () => {
                           <h6 className="mb-1">Phone Numbers</h6>
                           <p className="text-muted mb-0">
                             +234 703 067 3089<br />
-                            +234 906 000 0000
+                            +234 912 868 8164
                           </p>
                         </div>
                       </div>
