@@ -66,8 +66,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
         {feature.icon && (
           <div className="mt-3">
             <small className="text-muted">
-              <i className={`bi ${feature.icon} me-1`}></i>
-              {feature.icon.replace('bi-', '')}
+              <i className={`bi ${feature.icon}`}></i>
             </small>
           </div>
         )}
