@@ -1,3 +1,4 @@
+/* app/globals.css or components/AnnouncementBar.css */
 .announcement-bar {
   background-color: #FF6600;
   color: white;
@@ -20,6 +21,7 @@
   animation: scroll-left 30s linear infinite;
   font-size: 0.95rem;
   font-weight: 500;
+  /* Remove padding-left if you want it to start immediately */
 }
 
 .marquee-content span {
@@ -35,10 +37,10 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%); /* Start from visible position */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%); /* Scroll exactly half for seamless loop */
   }
 }
 

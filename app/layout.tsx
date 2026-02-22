@@ -5,6 +5,7 @@ import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Navbar from '@/components/Navbar';
+import AnnouncementBar from '@/components/AnnouncementBar'; // Add this import
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import { AuthProvider } from '@/contexts/AuthContext';
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           <ChatbotProvider>
+            <AnnouncementBar /> {/* Add this line - it will appear above Navbar */}
             <Navbar />
             <main className="min-h-screen pt-16">
               {children}
