@@ -1,6 +1,6 @@
 // components/AnnouncementBar.tsx
 import React from 'react';
-import '/AnnouncementBar.css'; // Adjust path as needed
+import './AnnouncementBar.css'; // Adjust path as needed
 
 const AnnouncementBar = () => {
   const message = "JavaNet edTech Suite deploys fully branded CBT-based assessment systems and live online learning platforms built specifically for private schools.";
