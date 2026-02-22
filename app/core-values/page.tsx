@@ -56,7 +56,7 @@ const CoreValuesPage = () => {
         <div className="container position-relative z-2 py-5">
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
-              <Link href="/about" className="text-white-80 text-decoration-none mb-4 d-inline-block">
+              <Link href="/About" className="text-white-80 text-decoration-none mb-4 d-inline-block">
                 <i className="bi bi-arrow-left me-2"></i>
                 Back to About Us
               </Link>
