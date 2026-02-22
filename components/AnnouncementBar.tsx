@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import './AnnouncementBar.css'; // Create this CSS file
+import './AnnouncementBar.css'; // Move CSS to external file
 
 const AnnouncementBar = () => {
   return (
@@ -20,7 +20,6 @@ const AnnouncementBar = () => {
           <span>Full customization</span>
           <span className="separator">•</span>
           <span>24/7 support</span>
-          <span className="separator">•</span>
         </div>
       </div>
     </div>

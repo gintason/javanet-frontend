@@ -6,6 +6,7 @@
   position: relative;
   border-bottom: 2px solid rgba(255,255,255,0.1);
   z-index: 1030;
+  width: 100%;
 }
 
 .marquee {
@@ -34,14 +35,13 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
-/* Pause animation on hover */
 .marquee:hover .marquee-content {
   animation-play-state: paused;
 }
