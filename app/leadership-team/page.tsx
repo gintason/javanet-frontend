@@ -137,7 +137,7 @@ const LeadershipTeamPage = () => {
               <p className="lead text-white-80 mb-4 mx-auto" style={{ maxWidth: '600px' }}>
                 We're always looking for talented individuals to join our growing team
               </p>
-              <Link href="/careers" className="btn btn-light btn-lg px-5 py-3 fw-semibold">
+              <Link href="#" className="btn btn-light btn-lg px-5 py-3 fw-semibold">
                 <i className="bi bi-briefcase me-2"></i>
                 View Careers
               </Link>
