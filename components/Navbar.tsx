@@ -138,7 +138,7 @@ const Navbar: React.FC = () => {
           <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
               {navLinks.map((link, index) => (
-                <li key={link.name} className="nav-item mx-1">
+                <li key={link.name} className="nav-item mx-0">
                   {link.hasDropdown ? (
                     // Dropdown menu for About Us with curved styling
                     <li className="nav-item dropdown">
