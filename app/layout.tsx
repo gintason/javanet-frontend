@@ -10,11 +10,12 @@ import Chatbot from '@/components/Chatbot';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { ChatbotProvider } from '@/contexts/ChatbotContext';
 import BootstrapClient from '@/components/BootstrapClient';
+import PixelProvider from '@/app/PixelProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'JavaNet EdTech Suite - White-Label Learning Platform',
+  title: 'JavaNet ICT Solutions Ltd - ...Engineering Intelligent Digital Solutions',
   description: 'Customizable Computer-Based Testing (CBT) and Live Classroom Solutions for Educational Institutions. One-time deployment fee, no monthly subscriptions.',
   keywords: 'edtech, cbt testing, virtual classroom, e-learning, school management, online examination',
 };
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Footer />
             <Chatbot />
             <BootstrapClient />
+            <PixelProvider />
           </ChatbotProvider>
         </AuthProvider>
       </body>
