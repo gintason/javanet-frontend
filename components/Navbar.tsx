@@ -1,4 +1,4 @@
-// components/Navbar.js (simplified version)
+// components/Navbar.js
 'use client';
 
 import React, { useState } from 'react';
@@ -18,7 +18,18 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/About' },
+    { 
+      name: 'About Us', 
+      href: '/About',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Overview', href: '/About' },
+        { name: 'Mission & Vision', href: '/mission-vision' },
+        { name: 'Core Values', href: '/core-values' },
+        { name: 'Tech Stack', href: '/tech-stack' },
+        { name: 'Leadership Team', href: '/leadership-team' },
+      ]
+    },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Customization', href: '/customization' },
     { name: 'Demo', href: '/demo' },
@@ -70,13 +81,71 @@ const Navbar: React.FC = () => {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             {navLinks.map((link) => (
               <li key={link.name} className="nav-item">
-                <Link
-                  className="nav-link text-light"
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                {link.hasDropdown ? (
+                  // Dropdown menu for About Us
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle text-light"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style={{
+                        transition: 'color 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#FF6600'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                    >
+                      {link.name}
+                    </a>
+                    <ul 
+                      className="dropdown-menu" 
+                      style={{ 
+                        backgroundColor: '#1A237E',
+                        border: 'none',
+                        boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
+                      }}
+                    >
+                      {link.dropdownItems.map((item) => (
+                        <li key={item.name}>
+                          <Link
+                            className="dropdown-item text-white"
+                            href={item.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            style={{
+                              backgroundColor: 'transparent',
+                              transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#FF6600';
+                              e.currentTarget.style.color = 'white';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent';
+                              e.currentTarget.style.color = 'white';
+                            }}
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  // Regular nav links
+                  <Link
+                    className="nav-link text-light"
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    style={{
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#FF6600'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
 
@@ -88,27 +157,65 @@ const Navbar: React.FC = () => {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                style={{
+                  transition: 'color 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#FF6600'}
+                onMouseLeave={(e) => e.currentTarget.style.color = ''}
               >
                 <i className="bi bi-person-circle me-1"></i>
                 {user ? user.email : 'Account'}
               </a>
-              <ul className="dropdown-menu dropdown-menu-end">
+              <ul 
+                className="dropdown-menu dropdown-menu-end" 
+                style={{ 
+                  backgroundColor: '#1A237E',
+                  border: 'none',
+                  boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
+                }}
+              >
                 {user ? (
                   <>
                     <li>
-                      <Link className="dropdown-item" href="/profile">
+                      <Link 
+                        className="dropdown-item text-white" 
+                        href="/profile"
+                        style={{
+                          backgroundColor: 'transparent',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#FF6600';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                      >
                         <i className="bi bi-person me-2"></i>
                         Profile
                       </Link>
                     </li>
-
-                    <li><hr className="dropdown-divider" /></li>
+                    <li><hr className="dropdown-divider" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} /></li>
                     <li>
                       <button
-                        className="dropdown-item text-danger"
+                        className="dropdown-item text-white"
                         onClick={() => {
                           handleLogout();
                           setIsMenuOpen(false);
+                        }}
+                        style={{
+                          backgroundColor: 'transparent',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#FF6600';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'white';
                         }}
                       >
                         <i className="bi bi-box-arrow-right me-2"></i>
@@ -119,13 +226,43 @@ const Navbar: React.FC = () => {
                 ) : (
                   <>
                     <li>
-                      <Link className="dropdown-item" href="/login">
+                      <Link 
+                        className="dropdown-item text-white" 
+                        href="/login"
+                        style={{
+                          backgroundColor: 'transparent',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#FF6600';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                      >
                         <i className="bi bi-box-arrow-in-right me-2"></i>
                         Login
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" href="/register">
+                      <Link 
+                        className="dropdown-item text-white" 
+                        href="/register"
+                        style={{
+                          backgroundColor: 'transparent',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#FF6600';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'white';
+                        }}
+                      >
                         <i className="bi bi-person-plus me-2"></i>
                         Register
                       </Link>
@@ -137,6 +274,16 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
       </div>
+
+      <style jsx>{`
+        .nav-link:hover {
+          color: #FF6600 !important;
+        }
+        .dropdown-item:hover {
+          background-color: #FF6600 !important;
+          color: white !important;
+        }
+      `}</style>
     </nav>
   );
 };
