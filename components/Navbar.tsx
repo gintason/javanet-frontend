@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         scrolled ? 'py-2' : 'py-3'
       }`} 
         style={{ 
-          backgroundColor: scrolled ? '#0f1a4d' : '#1A237E',
+          backgroundColor: scrolled ? '#0f1a4d' : '#002366',
           backdropFilter: scrolled ? 'blur(10px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(255,102,0,0.3)' : 'none',
         }}
