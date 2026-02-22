@@ -1,0 +1,47 @@
+.announcement-bar {
+  background-color: #FF6600;
+  color: white;
+  padding: 8px 0;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  z-index: 1030;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: scroll-left 30s linear infinite;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.marquee-content span {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.marquee-content .separator {
+  color: rgba(255,255,255,0.7);
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
