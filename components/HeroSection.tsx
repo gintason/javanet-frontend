@@ -144,7 +144,7 @@ const HeroSection: React.FC = () => {
               </div>
 
            <h4 className="display-5 fw-bold mb-4 text-light" style={{ lineHeight: '1.2' }}>
-              A fully customizable white-label education platform built for:{" "}<br/>
+              An all-in-one branded edTech platform combining CBT and live virtual learning for:{" "}<br/>
               <span style={{ color: '#FF6600' }} className="typewriter-text">
                 {textVariations[textIndex].substring(0, charIndex)}
                 <span className="blinking-cursor">|</span>
